@@ -1,6 +1,7 @@
 function convert_text() {
   var x = document.getElementById("user_input");
   var text = " " + x.elements[0].value + " ";  // to avoid string-edge problems w/ regex
+  var copy = text;
 
 /* if form has multiple input areas:
   var text = "";
@@ -9,7 +10,7 @@ function convert_text() {
     text += x.elements[i].value.toUpperCase() + "<br>";
   }
  */
-  
+
   text = remove_precombined(text);
   text = strip_formatting(text);
   text = correct_lkizmen(text);
@@ -18,34 +19,41 @@ function convert_text() {
   text = respell(text);
   text = show_exceptions(text);
   text = last_minute_fixes(text);
-  text = text.replace(/\n/g, "<br>");
+  //text = text.replace(/\n/g, "<br>");
 
-  document.getElementById("result").innerHTML = text;
+  document.getElementById("hasidic_output").innerHTML = text;
 }
 
 
 function remove_precombined(text) {
-  // transform precombined characters
-  text = text.replace(/שׂ/g, "שׂ");
-  text = text.replace(/תּ/g, "תּ");
-  text = text.replace(/וּ/g, "וּ");
-  text = text.replace(/יִ/g, "יִ");
-  text = text.replace(/אָ/g, "אָ");
-  text = text.replace(/פּ/g, "פּ");
-  text = text.replace(/אַ/g, "אַ");
-  text = text.replace(/פֿ/g, "פֿ");
-  text = text.replace(/ײַ/g, "ײַ");
-  text = text.replace(/כּ/g, "כּ");
-  text = text.replace(/בֿ/g, "בֿ");
-  text = text.replace(/בּ/g, "בּ");
+  var replacements = {
+    "שׂ": "שׂ",
+    "תּ": "תּ",
+    "וּ": "וּ",
+    "יִ": "יִ",
+    "אָ": "אָ",
+    "פּ": "פּ",
+    "אַ": "אַ",
+    "פֿ": "פֿ",
+    "ײַ": "ײַ",
+    "כּ": "כּ",
+    "בֿ": "בֿ",
+    "בּ": "בּ",
+  };
+
+  for (var letter_combined in replacements) {
+    var letter_separate = replacements[letter_combined];
+    var regex = new RegExp(letter_combined, "g");
+    text = text.replace(regex, letter_separate);
+  }
   return text;
 }
 
 function strip_formatting(text) {
   // remove nekudes and special unicode symbols
-  
+
   text = text.replace(/פֿאַרן/g, "פֿאַר'ן"); // just for far'n vs. forn vs. porn
-  
+
   text = text.replace(/װ/g, "וו");
   text = text.replace(/ױ/g, "וי");
   text = text.replace(/ײ/g, "יי");
@@ -64,10 +72,10 @@ function strip_formatting(text) {
   text = text.replace(/יִוּ/g, "יאו");
   text = text.replace(/יִיִ/g, "יאי");
   text = text.replace(/וּוּ/g, "ואו");
-  
+
   // remove all nekudes and pintelekh
   text = text.replace(/[ִַָֹּֿ]/g, "");
-  
+
   // simplify unicode chars w/ embedded nekudes
   text = text.replace(/אַ/g, "א");
   text = text.replace(/אָ/g, "א");
@@ -79,12 +87,12 @@ function strip_formatting(text) {
   text = text.replace(/בֿ/g, "ב");
   text = text.replace(/שׂ/g, "ש");
   text = text.replace(/כּ/g, "כ");
-  
+
   // fix punctuation
   text = text.replace(/־/g, "-");
   text = text.replace(/[“״″„]/g, '"');
   text = text.replace(/׳/g, "'");
-  
+
   return text;
 }
 
