@@ -1,90 +1,141 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="yi">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <title>hasidify your yivo text</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-90385668-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <link rel="stylesheet" href="lib/w3.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <style>
-  body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif}
-  .w3-navbar,h1,button {font-family: "Arial", sans-serif}
-  .fa-keyboard-o {font-size:200px}
-  </style>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="css/hasidify.css" rel="stylesheet">
 </head>
+
 <body>
+  <div id="wrapper">
 
-<!-- Header -->
-<header class="w3-container w3-blue w3-center w3-padding-32">
-  <h1 class="w3-margin w3-jumbo">פֿאַרהײמישן / hasidify</h1>
-  <p class="w3-xlarge">פֿון <a href="https://wp.nyu.edu/ibleaman" target="_blank">איציק בלימאַן</a> / by <a href="https://wp.nyu.edu/ibleaman" target="_blank">Isaac L. Bleaman</a></p>
-</header>
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="#menu-retoggle" id="menu-retoggle">
+            אָנװײַזונגען פֿאַרן באַניצער
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            אַרײַנװאַרג
+          </a>
+          <p>
+            שרײַבט אַרײַן אײַער טעקסט אינעם קעסטל װאָס אױף רעכטס.
+            מאַכט זיכער אַז איר פֿאָלגט אַלע תּקנות פֿונעם אײנהײטלעכן ייִדישן אױסלײג
+            (דעם „ייִװאָ־אױסלײג“).
+            דערנאָכדעם גיט אַ קװעטש אױפֿן קנעפּל „איבערשרײַבן“.
+          </p>
+        </li>
+        <li>
+          <a href="#">
+            אַרױסװאַרג
+          </a>
+          <p>
+            דער זעלבער טעקסט װאָס איר האָט געהאַט אַרײַנגעקלאַפּט
+            װעט איבערגעשריבן װערן אינעם חסידישן אױסלײג.
+          </p>
+        </li>
+        <li>
+          <a href="#">
+            היט זיך!
+          </a>
+          <p>
+            דער איבערשרײַב־מכשיר איז נישט פּערפֿעקט.
+            לײענט גוט איבער דעם איבערגעשריבענעם טעקסט
+            אײדער איר ניצט אים.
+            אַז איר װעט טרעפֿן גרײַזן זאָלט איר זײ
+            פֿאָרמולאַר אונטן.
+          </p>
+        </li>
+        <li>
+          <a href="https://github.com/ibleaman/hasidify" target="_blank">
+            שאלות־ותּשובֿות / FAQ
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEReifR2tkrEMT2gdUuo2p_6GxDXRpLDdpmXkvsyJYaE0Kdg/viewform?embedded=true" target="_blank">גרײַזן־פֿאָרמולאַר</a>
+        </li>
+        <li>
+          <a href="https://www.github.com/ibleaman/hasidify" target="_blank">קאָד <i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-4 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h5 class="w3-padding-32">
-        <form id="user_input" action="form_action.asp">
-          טעקסט אין ייִװאָ־אױסלײג:
-          <br>
-          <textarea type="text" name="yivo_input" style="height:300px; width:80%;" value="אײַער טעקסט">
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <h1>פֿאַרהײמישן / hasidify <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">אָנװײַזונגען</a></h1>
+        <p>פֿון <a href="https://wp.nyu.edu/ibleaman" target="_blank">איציק בלימאַן</a> / by <a href="https://wp.nyu.edu/ibleaman" target="_blank">Isaac L. Bleaman</a></p>
+
+        <div class="row">
+          <div class="col-6">
+            <form class="form-horizontal" role="form" id="user_input">
+              <label for="yivo_input" style="font-weight: bold;">טעקסט אין ייִװאָ־אױסלײג:</label>
+              <textarea class="form-control" rows="15" id="yivo_input">
 הײַנטיקע צײַטן װיל מען אַ מאָל שרײַבן אַ בליצבריװ צו אַ חבֿר, װאָס זײַן אױג איז נישט צוגעװױנט צו לײענען אונדזער ייִדישיסטישן אױסלײג. אײן קלײניקײט! דאָ קען מען צונױפֿשטעלן אַ טעקסט לױט די תּקנות פֿונעם ייִװאָ־אױסלײג, און סע װעט אױטאָמאַטיש אַרױס דער זעלביקער טעקסט מיטן הײמישן אױסלײג.
 
 למשל:
 ליכטיק, גראַמאַטיק, זונטיק, אמתדיק, בעל־גאװהניק, ייִדישלעך, ייִנגלעך, העפֿלעך, עפּלעך, רבקהס ראש־השנהדיקע חלה
-            
-איצט, פֿאַרבראַכט, רויִק, פֿייסבוק־זײַטלעך, בעל־הביתטעס, מיטן רבין, רבים, אַ גיכער לױפֿער, מיט שלמותדיקער חבֿרשאַפֿט</textarea><br>
-        </form>
 
-        <p>שרײַבט אַרײַן אײַער טעקסט! מאַכט זיכער אַז איר פֿאָלגט די תּקנות פֿון אײנהײטלעכן ייִדישן אױסלײג.</p>
+איצט, פֿאַרבראַכט, רויִק, פֿייסבוק־זײַטלעך, בעל־הביתטעס, מיטן רבין, רבים, אַ גיכער לױפֿער, מיט שלמותדיקער חבֿרשאַפֿט
+              </textarea>
+              <br>
+              <a class="btn btn-primary" style="color: white;" onclick="convert_text()">איבערשרײַבן</a>
+            </form>
+          </div>
 
-        <button onclick="convert_text()">פֿאַרהײמישן...</button></h5>
+          <div class="col-6">
+            <label for="hasidic_output" style="font-weight: bold;">דער רעזולטאַט:</label>
+            <textarea class="form-control" id="hasidic_output" rows="15" readonly style="color:white; background-color: gray; white-space: pre-wrap;"></textarea>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="w3-third w3-center">
-      <i class="fa fa-keyboard-o w3-padding-64 w3-text-blue"></i>
-    </div>
+    <!-- /#page-content-wrapper -->
+
   </div>
-</div>
+  <!-- /#wrapper -->
 
-<!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-12 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>דער רעזולטאַט</h1>
-      <h5 class="w3-padding-12">
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-          <p id="result"></p>
-          <script src="lexicon.js"></script>
-          <script src="hasidify.js"></script>
+  <!-- Orthography normalizer JavaScript -->
+  <script src="lexicon.js"></script>
+  <script src="hasidify.js"></script>
 
-      </h5>
-    </div>
-  </div>
-</div>
+  <!-- Menu Toggle Script -->
+  <script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+  $("#menu-retoggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+  </script>
 
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge"><a href="https://github.com/ibleaman/hasidify">שאלות־ותּשובֿות</a> / <a href="https://github.com/ibleaman/hasidify">FAQ</a></h1>
-    <br>
-    <h1 class="w3-margin w3-xlarge">צי האָט איר באַמערקט עפּעס אַ גרײַז?</h1>
-    <p>זײַט אַזױ גוט, פֿילט אױס דעם פֿאָרמולאַר און איציק װעט פּרוּװן אױסבעסערן דעם אַלגאָריטעם.</p>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeEReifR2tkrEMT2gdUuo2p_6GxDXRpLDdpmXkvsyJYaE0Kdg/viewform?embedded=true" style="height:300px; width:80%;" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-</div>
+  <!-- Analytics Script -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-90385668-1', 'auto');
+  ga('send', 'pageview');
+  </script>
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-12 w3-center w3-opacity">
- <p><a href="https://www.github.com/ibleaman/hasidify" target="_blank">לײענען דעם קאָד אױף Github</a></p>
-</footer>
-  
 </body>
+
 </html>
