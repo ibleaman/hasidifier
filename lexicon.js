@@ -117,7 +117,9 @@ var suffix_variants = `
 זעען|זעהען
 לייענען|ליינען
 יקייט|יגקייט
+יִקייט|יִגקייט
 יקווײַז|יגווײַז
+יִקווײַז|יגווײַז
 `;
 suffix_variants = combine_variants(suffix_variants.match(pre_pipe), suffix_variants.match(post_pipe));
 
@@ -550,7 +552,8 @@ var last_minute_fixes = `
 עוף'ליך|עוף'לעך
 עוף'עליך|עוף'עלעך
 'ליך|'לעך
-מ'|ם'
+מ'ס(<\/token>)|מ'ס$1
+מ'ל(<\/token>)|מ'ל$1
 נ'|ן'
 
 `;
