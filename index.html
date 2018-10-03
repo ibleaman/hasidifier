@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>hasidify your yivo text</title>
+  <title>hasidifier: hasidify your yivo text</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
   <link href="css/simple-sidebar.css" rel="stylesheet">
-  <link href="css/hasidify.css" rel="stylesheet">
+  <link href="css/hasidifier.css" rel="stylesheet">
 </head>
 
 <body>
@@ -57,7 +57,7 @@
           </p>
         </li>
         <li>
-          <a href="https://github.com/ibleaman/hasidify" target="_blank">
+          <a href="https://github.com/ibleaman/hasidifier" target="_blank">
             שאלות־ותּשובֿות / FAQ
           </a>
         </li>
@@ -65,7 +65,7 @@
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeEReifR2tkrEMT2gdUuo2p_6GxDXRpLDdpmXkvsyJYaE0Kdg/viewform?embedded=true" target="_blank">גרײַזן־פֿאָרמולאַר</a>
         </li>
         <li>
-          <a href="https://www.github.com/ibleaman/hasidify" target="_blank">קאָד <i class="fab fa-github"></i></a>
+          <a href="https://www.github.com/ibleaman/hasidifier" target="_blank">קאָד <i class="fab fa-github"></i></a>
         </li>
       </ul>
     </div>
@@ -74,28 +74,37 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid">
-        <h1>פֿאַרהײמישן / hasidify <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">אָנװײַזונגען</a></h1>
+        <h1>פֿאַרהײמישער / hasidifier <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">אָנװײַזונגען</a></h1>
         <p>פֿון <a href="https://wp.nyu.edu/ibleaman" target="_blank">איציק בלימאַן</a> / by <a href="https://wp.nyu.edu/ibleaman" target="_blank">Isaac L. Bleaman</a></p>
 
         <div class="row">
           <div class="col-6">
-            <form class="form-horizontal" role="form" id="user_input">
-              <label for="yivo_input" style="font-weight: bold;">טעקסט אין ייִװאָ־אױסלײג:</label>
-              <textarea class="form-control" rows="15" id="yivo_input">
-הײַנטיקע צײַטן װיל מען אַ מאָל שרײַבן אַ בליצבריװ צו אַ חבֿר, װאָס זײַן אױג איז נישט צוגעװױנט צו לײענען אונדזער ייִדישיסטישן אױסלײג. אײן קלײניקײט! דאָ קען מען צונױפֿשטעלן אַ טעקסט לױט די תּקנות פֿונעם ייִװאָ־אױסלײג, און סע װעט אױטאָמאַטיש אַרױס דער זעלביקער טעקסט מיטן הײמישן אױסלײג.
+            <form class="form" role="form" id="user_input">
+              <div class="form-row">
+                <label for="yivo_input" style="font-weight: bold;">אין ייִװאָ־אױסלײג:</label>
+<textarea class="form-control" rows="15" id="yivo_input">
+אַ מאָל װיל מען שרײַבן אַ בליצבריװ אױף ייִדיש, אָבער מע װײסט אַז דער לײענער איז נישט צוגעװױנט צו אונדזער ייִדישיסטישן אױסלײג. אײן קלײניקײט! דאָ קען מען צונױפֿשטעלן אַ טעקסט לױט די תּקנות פֿונעם אײנהײטלעכן ייִװאָ־אױסלײג, און סע װעט אױטאָמאַטיש אַרױס דער זעלביקער טעקסט אינעם הײמישן אױסלײג. גיט נאָר אַ פּרוּװ!
 
-למשל:
-ליכטיק, גראַמאַטיק, זונטיק, אמתדיק, בעל־גאװהניק, ייִדישלעך, ייִנגלעך, העפֿלעך, עפּלעך, רבקהס ראש־השנהדיקע חלה
-
-איצט, פֿאַרבראַכט, רויִק, פֿייסבוק־זײַטלעך, בעל־הביתטעס, מיטן רבין, רבים, אַ גיכער לױפֿער, מיט שלמותדיקער חבֿרשאַפֿט
-              </textarea>
+משל־װערטער:
+ליכטיקער, גראַמאַטיקער; זונטיק, אומשׂכלדיק; העפֿלעך, ייִנגלעך; לעכערלעכער; רבֿקהס; רויִקײט; איצט; פֿאַרבראַכט; פֿאַראַן; לשון־נקבֿה</textarea>
+              </div>
               <br>
-              <a class="btn btn-primary" style="color: white;" onclick="convert_text()">איבערשרײַבן</a>
+              <div class="form-group">
+                <a class="btn btn-primary" style="color: white;" onclick="convert_text()">איבערשרײַבן</a>
+              </div>
+              <div class="form-group form-check">
+                <input class="form-check-input" type="checkbox" value="" id="alef_diacritics"></input>
+                <label class="form-check-label" for="alef_diacritics">אױפֿהיטן פּתח/קמץ אונטערן אַלף</label>
+              </div>
+              <div class="form-group form-check">
+                <input class="form-check-input" type="checkbox" value="" id="pey_diacritics"></input>
+                <label class="form-check-label" for="pey_diacritics">אױפֿהיטן פּ/פ</label>
+              </div>
             </form>
           </div>
 
           <div class="col-6">
-            <label for="hasidic_output" style="font-weight: bold;">דער רעזולטאַט:</label>
+            <label for="hasidic_output" style="font-weight: bold;">אין חסידישן:</label>
             <textarea class="form-control" id="hasidic_output" rows="15" readonly style="color:white; background-color: gray; white-space: pre-wrap;"></textarea>
           </div>
         </div>
@@ -112,7 +121,7 @@
 
   <!-- Orthography normalizer JavaScript -->
   <script src="lexicon.js"></script>
-  <script src="hasidify.js"></script>
+  <script src="hasidifier.js"></script>
 
   <!-- Menu Toggle Script -->
   <script>
