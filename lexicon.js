@@ -1,8 +1,8 @@
 // HELPER FUNCTIONS
 
 // originalword|replacementword
-var pre_pipe = /(?<=\n).+?(?=\|)/mgi; // anything preceded by \n and followed by |
-var post_pipe = /(?<=\|).+?(?=\n|(\/+))/mgi; // anything preceded by | and followed by \n or //
+var pre_pipe = /\n.+?(?=\|)/g; // anything preceded by \n and followed by |
+var post_pipe = /\|.+?(?=\n|(\/+))/g; // anything preceded by | and followed by \n or //
 
 // combines matched arrays into a dictionary
 function combine_variants(array1, array2) {
@@ -10,19 +10,19 @@ function combine_variants(array1, array2) {
 
   var arrayLength = array1.length;
   for (var i = 0; i < arrayLength; i++) {
-    keys_values[array1[i]] = array2[i];
+    keys_values[array1[i].substring(1,)] = array2[i].substring(1,);
   }
   return keys_values;
 }
 
 // goes through words in string and creates dictionary of exceptions and "tag#tag" indices
 function index_exceptions(long_string, tag) {
-  var array = long_string.match(/(?<=\n).+?(?=\n|(\/+))/mgi);
+  var array = long_string.match(/\n.+?(?=\n|(\/+))/mgi);
   var keys_values = {};
 
   var arrayLength = array.length;
   for (var i = 0; i < arrayLength; i++) {
-    keys_values[array[i]] = tag + i + tag;
+    keys_values[array[i].substring(1,)] = tag + i + tag;
   }
   return keys_values;
 }
@@ -36,6 +36,32 @@ function index_exceptions(long_string, tag) {
 //  ײַ not ייַ (for [ay] vowel)
 
 // note: any comments should appear with "//" *immediately* after entry, no spaces
+
+var lk_variants = `
+שלמות|שלימות
+גנבֿה|גניבֿה
+גנבֿות|גניבֿות
+נקבֿה|נקיבֿה
+נקבֿות|נקיבֿות
+מצבֿה|מציבֿה
+מצבֿות|מציבֿות
+ספֿקות|ספֿיקות
+גילגול|גלגול
+מיזרח|מזרח
+מינהג|מנהג
+מיצווה|מצוה
+מיצוות|מצוות
+גאווה|גאוה
+ניפֿטר|נפֿטר
+מישנה|משנה
+מישפּט|משפּט
+מיקווה|מקוה
+דווקא|דוקא
+כּוח<\/token>|כּח//koyekh but not koykhes
+עופֿל|עוף'ל
+עופֿעל|עוף'על
+`;
+lk_variants = combine_variants(lk_variants.match(pre_pipe), lk_variants.match(post_pipe));
 
 var whole_word_variants = `
 אײַפֿאָן|אײַפֿאָון
@@ -424,32 +450,6 @@ var lekh_exceptions = `
 `;
 lekh_exceptions = index_exceptions(lekh_exceptions, "lekh_except");
 
-var lk_variants = `
-שלמות|שלימות
-גנבֿה|גניבֿה
-גנבֿות|גניבֿות
-נקבֿה|נקיבֿה
-נקבֿות|נקיבֿות
-מצבֿה|מציבֿה
-מצבֿות|מציבֿות
-ספֿקות|ספֿיקות
-גילגול|גלגול
-מיזרח|מזרח
-מינהג|מנהג
-מיצווה|מצוה
-מיצוות|מצוות
-גאווה|גאוה
-ניפֿטר|נפֿטר
-מישנה|משנה
-מישפּט|משפּט
-מיקווה|מקוה
-דווקא|דוקא
-כּוח<\/token>|כּח//koyekh but not koykhes
-עופֿל|עוף'ל
-עופֿעל|עוף'על
-`;
-lk_variants = combine_variants(lk_variants.match(pre_pipe), lk_variants.match(post_pipe));
-
 var lkizmen = `
 אמת
 חבֿר
@@ -535,7 +535,7 @@ var lkizmen = `
 אַהרן
 אַהרנ
 `;
-lkizmen = lkizmen.match(/(?<=\n).+?(?=\n|(\/\/))/mgi);
+lkizmen = lkizmen.match(/\n.+?(?=\n|(\/+))/mgi);
 
 
 
@@ -555,7 +555,6 @@ var last_minute_fixes = `
 מ'ס(<\/token>)|מ'ס$1
 מ'ל(<\/token>)|מ'ל$1
 נ'|ן'
-
 `;
 last_minute_fixes = combine_variants(last_minute_fixes.match(pre_pipe), last_minute_fixes.match(post_pipe));
 

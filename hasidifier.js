@@ -36,13 +36,13 @@ function convert_text() {
   // all diacritics but patah/qamats: [ִַָֹׂ]
   text = text.replace(/[ִֹֺֿׂ]/g, "");
   if (alef_checkbox.checked){
-    text = text.replace(/(?<!א)[ַָ]/g, "");
+    text = text.replace(/([בֿגדהוּזחטיִײַכּלמםנןסעפּפֿףצקרשׂתּ])[ַָ]/g, "$1");
   }
   else {
     text = text.replace(/[ַָ]/g, "");
   }
   if (pey_checkbox.checked){
-    text = text.replace(/(?<!פ)[ּ]/g, "");
+    text = text.replace(/([אַאָבֿגדהוּזחטיִײַכּלמםנןסעףצקרשׂתּ])[ּ]/g, "$1");
   }
   else {
     text = text.replace(/[ּ]/g, "");
@@ -93,10 +93,10 @@ function correct_lk(text) {
 function insert_apostrophes_lk(text) {
   // add apostrophes before and after LK'izmen
   for (var i = 0; i < lkizmen.length; i++) {
-    var regex = new RegExp("(?<!<token>|ב|ה|ל)" + lkizmen[i], "g"); // not b-, h-, l-, or word start
-    text = text.replace(regex, "'" + lkizmen[i]);
-    var regex = new RegExp(lkizmen[i] + "(?!<\/token>|ים|ות|ימ)", "g"); // not -im or -oys or word ending
-    text = text.replace(regex, lkizmen[i] + "'");
+    var regex = new RegExp("([אַאָגדוּזחטיִײַכּמםנןסעפּפֿףצץקרשׂתּ])" + lkizmen[i].substring(1,), "g"); // not b-, h-, l-, or word start
+    text = text.replace(regex, "$1" + "'" + lkizmen[i].substring(1,));
+    var regex = new RegExp(lkizmen[i].substring(1,) + "(?!<\/token>|ים|ות|ימ)", "g"); // not -im or -oys or word ending
+    text = text.replace(regex, lkizmen[i].substring(1,) + "'");
   }
   return text;
 }
