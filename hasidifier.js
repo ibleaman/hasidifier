@@ -146,7 +146,7 @@ function apply_regular_rules(text) {
   text = text.replace(/יק(?=((ער|ע|ן|סט|ס|ט|ערע|ערן|ערס|סטע|סטער|סטן|סטנס|ונג|ונגען)?<\/token>))/g, "יג");
   text = text.replace(/לעך/g, "ליך");
   // lekh: lekh(?=(e|er|n|st|s|t|ere|ern|ers|ste|ster|stn|stns)?<\/token>)
-  text = text.replace(/לעכ(?=(ע|ער|ן|ס|ט|סט|ערע|ערן|ערס|סטע|סטער|סטן|סטנס)?<\/token>)/g, "ליכ");
+  text = text.replace(/לעכ(?=(ע|ער|ן|ס|ט|סט|ערע|ערן|ערס|סטע|סטער|סטן|סטנס|קייט|קייטן)?<\/token>)/g, "ליכ");
   return text;
 }
 
@@ -200,7 +200,7 @@ function strip_formatting(text) {
   text = text.replace(/ײ/g, "יי");
   text = text.replace(/וּוווּ/g, "ואוואו");
   text = text.replace(/יייִ/g, "ייאי");
-  text = text.replace(/ייַיִ/g, "ייאי");
+  text = text.replace(/ייַיִ/g, "ייאי");//frier, hebreish - no alef in HY forums AFAIK
   text = text.replace(/וּוו/g, "ואוו");
   text = text.replace(/וווּ/g, "וואו");
   text = text.replace(/וווי/g, "וואוי");
@@ -210,6 +210,7 @@ function strip_formatting(text) {
   text = text.replace(/יִוּ/g, "יאו");
   text = text.replace(/יִיִ/g, "יאי");
   text = text.replace(/וּוּ/g, "ואו");
+  text = text.replace(/וי(ו|וּ)/g, "ויאו");
 
   // fix punctuation
   text = text.replace(/־/g, "-");
