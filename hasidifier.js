@@ -1,6 +1,6 @@
 function convert_text() {
   var x = document.getElementById("user_input");
-  var text = x.elements[0].value.split(/(\s+|,|\.|־|-|;|:|\?|\!)/);
+  var text = x.elements[0].value.split(/(\s+|,|\.|־|-|;|:|\?|\!|\/|\\)/);
 
   var numwords = text.length;
   for (var i = 0; i < numwords; i++) {

@@ -56,6 +56,8 @@ var lk_variants = `
 מישנה|משנה
 מישפּט|משפּט
 מיקווה|מקוה
+צימצום|צמצום
+צימצומ|צמצומ
 דווקא|דוקא
 כּוח<\/token>|כּח//koyekh but not koykhes
 עופֿל|עוף'ל
@@ -64,12 +66,16 @@ var lk_variants = `
 lk_variants = combine_variants(lk_variants.match(pre_pipe), lk_variants.match(post_pipe));
 
 var whole_word_variants = `
+אַטמאָספֿער|אַטמאָספֿערע
 אײַפֿאָן|אײַפֿאָון
 איצט|יעצט
 איצטער|יעצט
 איצטערט|יעצט
 אָקיי|אָקעי
 אָרעם|אָרים
+בײַט|טוישט
+בײַטן|טוישן
+בײַטסט|טוישסט
 בליצאַדרעס|אימעיל
 בליצבריוו|אימעיל
 בליצפּאָסט|אימעיל
@@ -86,6 +92,7 @@ var whole_word_variants = `
 זעט|זעהט
 זעסט|זעהסט
 טאָן|טוהן
+כּלערליי|כּל'ערליי
 לייען|ליין
 לייענט|ליינט
 לייענסט|ליינסט
@@ -93,6 +100,7 @@ var whole_word_variants = `
 לייענערס|ליינערס
 מאָנטיק|מאָנטאָג
 מײַספּייס|מײַספּעיס
+מע|מ'
 נייטיק|נויטיק
 סמאַרטפֿאָן|סמאַרטפֿאָון
 פֿאַראַן|פֿאַרהאַן
@@ -101,6 +109,8 @@ var whole_word_variants = `
 פֿייסבוק|פֿעיסבוק
 פֿרײַטיק|פֿרײַטאָג
 צונויף|צאם
+קוקווינקל|שטאַנדפּונקט
+קוקווינקלען|שטאַנדפּונקטן
 `;
 // didn't include oyf'n, mit'n, far'n, etc.
 whole_word_variants = combine_variants(whole_word_variants.match(pre_pipe), whole_word_variants.match(post_pipe));
@@ -138,18 +148,23 @@ prefix_variants = combine_variants(prefix_variants.match(pre_pipe), prefix_varia
 
 var suffix_variants = `
 בראַכט|ברענגט
+געביטן|געטוישט
 געזען|געזעהן
 געלייענט|געליינט
+טעז|טעזע
 זעען|זעהען
 לייענען|ליינען
 יקייט|יגקייט
 יִקייט|יִגקייט
 יקווײַז|יגווײַז
 יִקווײַז|יגווײַז
+פֿאַרביטן|פֿאַרטוישט
 `;
 suffix_variants = combine_variants(suffix_variants.match(pre_pipe), suffix_variants.match(post_pipe));
 
 var anywhere_variants = `
+געביטענ|געטוישט
+פֿאַרביטענ|פֿאַרטוישט
 געטאָן|געטון
 ייִד|איד
 לייענענ|ליינענ
@@ -186,7 +201,6 @@ var word_group_variants = `
 וויפֿל|וויפֿיל
 טייל מאָל|טיילמאָל
 מיט אַ מאָל|מיטאַמאָל
-מע\s|מ'
 נאָך אַלץ|נאָכאַלץ
 נאָך אַ מאָל|נאָכאַמאָל
 נאָך אַנאַנד|נאָכאַנאַנד
@@ -543,11 +557,16 @@ lkizmen = lkizmen.match(/\n.+?(?=\n|(\/+))/mgi);
 
 var last_minute_fixes = `
 אַ מאָל|אַמאָל
+איך טוישט|איך טויש
+טוישט איך|טויש איך
+טוישטעם|טוישטן
 (<token>)פֿיל(</token>)|$1פֿילע$2
 (<token>)ליכער(</token>)|$1לעכער$2
 שמואל'יג|שמואל'יק
 ייִוואָ|ייווא
 נישטיק|נישטיג
+סאַך(</token><token>־</token><token>הכּל)|סך$1
+אַסך|אַ סך
 (<token>)עפּליך(</token>)|$1עפּלעך$2
 (<token>)עפּעליך(</token>)|$1עפּעלעך$2
 עוף'ליך|עוף'לעך
@@ -556,6 +575,7 @@ var last_minute_fixes = `
 מ'ס(<\/token>)|מ'ס$1
 מ'ל(<\/token>)|מ'ל$1
 נ'|ן'
+מ' |מ'
 `;
 last_minute_fixes = combine_variants(last_minute_fixes.match(pre_pipe), last_minute_fixes.match(post_pipe));
 
