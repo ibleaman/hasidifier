@@ -161,6 +161,8 @@ var suffix_variants = `
 יִקייטן|יִגקייטן
 יקווײַז|יגווײַז
 יִקווײַז|יגווײַז
+יקערהייט|יגערהייט
+יִקערהייט|יִגערהייט
 פֿאַרביטן|פֿאַרטוישט
 `;
 suffix_variants = combine_variants(suffix_variants.match(pre_pipe), suffix_variants.match(post_pipe));
