@@ -81,6 +81,7 @@ var whole_word_variants = `
 בליצפּאָסט|אימעיל
 ברייק|ברעיק
 גיך|שנעל
+געגנטן|געגנטער
 געוויינט?לעך|געווענליך
 גרענעץ|גרעניץ
 דאָנערשטיק|דאָנערשטאָג
@@ -111,6 +112,7 @@ var whole_word_variants = `
 צונויף|צאם
 קוקווינקל|שטאַנדפּונקט
 קוקווינקלען|שטאַנדפּונקטן
+שעהען|שעות
 `;
 // didn't include oyf'n, mit'n, far'n, etc.
 whole_word_variants = combine_variants(whole_word_variants.match(pre_pipe), whole_word_variants.match(post_pipe));
@@ -217,6 +219,7 @@ var word_group_variants = `
 פֿאַר וואָס|פֿאַרוואָס
 פֿון דעסט וועגן|פֿונדעסטוועגן
 קיין מאָל|קיינמאָל
+די פֿאַלן|די פֿעלער
 `;
 word_group_variants = combine_variants(word_group_variants.match(pre_pipe), word_group_variants.match(post_pipe));
 
