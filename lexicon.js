@@ -172,10 +172,10 @@ var suffix_variants = `
 suffix_variants = combine_variants(suffix_variants.match(pre_pipe), suffix_variants.match(post_pipe));
 
 var anywhere_variants = `
-געביטענ|געטוישט
-פֿאַרביטענ|פֿאַרטוישט
 געביטענעמ|געטוישטנ
 פֿאַרביטענעמ|פֿאַרטוישטנ
+געביטענ|געטוישט
+פֿאַרביטענ|פֿאַרטוישט
 געטאָן|געטון
 זעענדיק|זעהענדיג
 ייִד|איד
