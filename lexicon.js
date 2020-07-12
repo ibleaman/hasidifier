@@ -249,6 +249,7 @@ var ik_exceptions = `
 אומגליק
 איבערשיקן
 אייגעניק
+אײַזיק
 אינדיק
 איציק
 באַלאַלײַקע
@@ -576,6 +577,7 @@ var last_minute_fixes = `
 נישטיק|נישטיג
 סאַך(</token><token>־</token><token>הכּל)|סך$1
 אַסך|אַ סך
+קלייניגקייט|קלייניקייט // these may be equally common spellings in HY; but on basis of *kleynik, I am not correcting kleynikeyt to have a giml
 (<token>)עפּליך(</token>)|$1עפּלעך$2
 (<token>)עפּעליך(</token>)|$1עפּעלעך$2
 עוף'ליך|עוף'לעך
