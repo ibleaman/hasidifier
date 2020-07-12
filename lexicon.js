@@ -174,6 +174,8 @@ suffix_variants = combine_variants(suffix_variants.match(pre_pipe), suffix_varia
 var anywhere_variants = `
 געביטענ|געטוישט
 פֿאַרביטענ|פֿאַרטוישט
+געביטענעמ|געטוישטנ
+פֿאַרביטענעמ|פֿאַרטוישטנ
 געטאָן|געטון
 זעענדיק|זעהענדיג
 ייִד|איד
