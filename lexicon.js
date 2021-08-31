@@ -153,6 +153,10 @@ prefix_variants = combine_variants(prefix_variants.match(pre_pipe), prefix_varia
 
 var suffix_variants = `
 בראַכט|ברענגט
+בראַכטע|ברענגטע
+בראַכטער|ברענגטער
+בראַכטן|ברענגטן
+בראַכטס|ברענגטס
 געביטן|געטוישט
 געזען|געזעהן
 געלייענט|געליינט
