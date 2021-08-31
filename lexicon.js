@@ -588,6 +588,7 @@ var last_minute_fixes = `
 סאַך(</token><token>־</token><token>הכּל)|סך$1
 אַסך|אַ סך
 קלייניגקייט|קלייניקייט// these may be equally common spellings in HY; but on basis of *kleynik, I am not correcting kleynikeyt to have a giml
+שנייאיק|שנייאיג
 (<token>)עפּליך(</token>)|$1עפּלעך$2
 (<token>)עפּעליך(</token>)|$1עפּעלעך$2
 עוף'ליך|עוף'לעך
