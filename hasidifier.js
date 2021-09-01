@@ -214,7 +214,7 @@ function strip_formatting(text) {
 
   // fix punctuation
   text = text.replace(/־/g, "-");
-  text = text.replace(/[“״″„]/g, '"');
+  text = text.replace(/[“״″‟„]/g, '"');
   text = text.replace(/׳/g, "'");
 
   return text;
